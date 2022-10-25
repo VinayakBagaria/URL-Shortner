@@ -9,8 +9,8 @@ services:
       - db
 
   db:
-    build: db
+    image: redis:latest
     ports:
       - "6379:6379"
     volumes:
-      - .data:/data
+      - ./redis_data:/data

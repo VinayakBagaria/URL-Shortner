@@ -33,7 +33,7 @@ func ShortenURL(c *fiber.Ctx) error {
 	}
 
 	// implement rate limiting
-	r2 := database.CreateClient(1)
+	r2 := database.CreateClient(0)
 	defer r2.Close()
 	val, err := r2.Get(c.IP()).Result()
 	if err == redis.Nil {
