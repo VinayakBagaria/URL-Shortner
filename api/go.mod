@@ -4,6 +4,7 @@ go 1.19
 
 require (
 	github.com/andybalholm/brotli v1.0.0 // indirect
+	github.com/go-redis/redis v6.15.9+incompatible // indirect
 	github.com/gofiber/fiber v1.14.6 // indirect
 	github.com/gofiber/utils v0.0.10 // indirect
 	github.com/gorilla/schema v1.1.0 // indirect
