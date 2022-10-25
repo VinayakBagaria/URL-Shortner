@@ -1,0 +1,28 @@
+package main
+
+import (
+	"fmt"
+	"github.com/VinayakBagaria/url-shortner/routes"
+	"github.com/gofiber/fiber"
+	"github.com/gofiber/fiber/middleware"
+	"github.com/joho/godotenv"
+	"log"
+	"os"
+)
+
+func setupRoutes(app *fiber.App) {
+	app.Get("/:url", routes.ResolveURL)
+	app.Post("/api/v1", routes.ShortenURL)
+}
+
+func main() {
+	err := godotenv.Load()
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	app := fiber.New()
+	app.Use(middleware.Logger())
+	setupRoutes(app)
+	log.Fatal(app.Listen(os.Getenv("APP_PORT")))
+}
