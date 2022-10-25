@@ -3,7 +3,7 @@ package routes
 import (
 	"github.com/VinayakBagaria/url-shortner/database"
 	"github.com/go-redis/redis"
-	"github.com/gofiber/fiber"
+	"github.com/gofiber/fiber/v2"
 )
 
 func ResolveURL(c *fiber.Ctx) error {
